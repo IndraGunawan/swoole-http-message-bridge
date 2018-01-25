@@ -1,0 +1,29 @@
+{
+    "name": "indragunawan/swoole-http-message-bridge",
+    "description": "Swoole Http Message Bridge",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Indra Gunawan",
+            "email": "hello@indra.my.id"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Indragunawan\\SwooleHttpMessageBridge\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Indragunawan\\SwooleHttpMessageBridge\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.0",
+        "symfony/http-foundation": "^2.7 || ^3.0 || ^4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    }
+}
