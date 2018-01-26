@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Indragunawan\SwooleHttpMessageBridge\Tests;
+namespace Indragunawan\SwooleHttpMessageBridge\Tests\Symfony;
 
-use Indragunawan\SwooleHttpMessageBridge\Request;
+use Indragunawan\SwooleHttpMessageBridge\Symfony\Request;
 use PHPUnit\Framework\TestCase;
 
 /**

@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Indragunawan\SwooleHttpMessageBridge\Tests;
+namespace Indragunawan\SwooleHttpMessageBridge\Tests\Symfony;
 
-use Indragunawan\SwooleHttpMessageBridge\Response;
+use Indragunawan\SwooleHttpMessageBridge\Symfony\Response;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response as SfResponse;
 
