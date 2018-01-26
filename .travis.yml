@@ -1,0 +1,27 @@
+language: php
+
+sudo: false
+
+cache:
+    directories:
+        - $HOME/.composer/cache
+
+matrix:
+    include:
+        - php: '7.0'
+        - php: '7.1'
+        - php: '7.2'
+        - php: '7.2'
+          env: deps=low
+
+before_install:
+    - pecl install swoole
+    - echo "extension=swoole.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+    - composer self-update
+
+install:
+    - if [[ $deps != 'low' ]]; then composer update --prefer-dist --no-progress --no-suggest --ansi; fi
+    - if [[ $deps = 'low' ]]; then composer update --prefer-dist --no-progress --no-suggest --prefer-stable --prefer-lowest --ansi; fi
+
+script:
+    - ./vendor/bin/phpunit --coverage-text

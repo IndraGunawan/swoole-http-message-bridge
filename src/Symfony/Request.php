@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Indragunawan\SwooleHttpMessageBridge;
+namespace Indragunawan\SwooleHttpMessageBridge\Symfony;
 
 use Swoole\Http\Request as SwooleRequest;
 use Symfony\Component\HttpFoundation\ParameterBag;

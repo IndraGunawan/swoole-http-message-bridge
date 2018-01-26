@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Indragunawan\SwooleHttpMessageBridge;
+namespace Indragunawan\SwooleHttpMessageBridge\Symfony;
 
 use Swoole\Http\Response as SwooleResponse;
 use Symfony\Component\HttpFoundation\Response as SfResponse;
