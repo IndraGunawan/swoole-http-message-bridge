@@ -24,14 +24,18 @@ class Response
      *
      * @param SwooleResponse $swooleResponse
      * @param SfResponse     $sfResponse
+     * @param bool           $end
      */
-    public static function writeSwooleResponse(SwooleResponse $swooleResponse, SfResponse $sfResponse)
+    public static function writeSwooleResponse(SwooleResponse $swooleResponse, SfResponse $sfResponse, $end = true)
     {
         // write headers
         self::writeHeaders($swooleResponse, $sfResponse);
 
-        // write content
-        $swooleResponse->write($sfResponse->getContent());
+        if (true === $end) {
+            $swooleResponse->end($sfResponse->getContent());
+        } else {
+            $swooleResponse->write($sfResponse->getContent());
+        }
     }
 
     /**
