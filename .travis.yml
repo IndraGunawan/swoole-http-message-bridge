@@ -15,7 +15,7 @@ matrix:
           env: deps=low
 
 before_install:
-    - pecl install swoole
+    - yes "" | pecl install swoole
     - echo "extension=swoole.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
     - composer self-update
 
