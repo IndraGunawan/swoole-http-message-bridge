@@ -20,13 +20,23 @@ use Symfony\Component\HttpFoundation\Response as SfResponse;
  */
 class ResponseTest extends TestCase
 {
-    public function testWriteResponse()
+    public function testWriteResponseWithEnd()
     {
         $sfResponse = new SfResponse();
 
         $swooleResponse = $this->createMock(\Swoole\Http\Response::class);
-        $swooleResponse->expects($this->once())->method('write');
 
-        Response::writeSwooleResponse($swooleResponse, $sfResponse);
+        $swooleResponse->expects($this->once())->method('end');
+        Response::writeSwooleResponse($swooleResponse, $sfResponse, true);
+    }
+
+    public function testWriteResponseWithoutEnd()
+    {
+        $sfResponse = new SfResponse();
+
+        $swooleResponse = $this->createMock(\Swoole\Http\Response::class);
+
+        $swooleResponse->expects($this->once())->method('write');
+        Response::writeSwooleResponse($swooleResponse, $sfResponse, false);
     }
 }
